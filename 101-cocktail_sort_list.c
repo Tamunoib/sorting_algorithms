@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void swap_node_ahead(listint_t **list, listint_t **tail, listint_t **shaker);
+void swap_node_ahead(listint_t **list, listint_t **shaker);
 void swap_node_behind(listint_t **list, listint_t **tail, listint_t **shaker);
 void cocktail_sort_list(listint_t **list);
 
@@ -11,8 +11,8 @@ void cocktail_sort_list(listint_t **list);
  * @tail: A pointer to the tail of the doubly-linked list.
  * @shaker: A pointer to the current swapping node of the coctail shaker algo.
  */
-void swap_node_ahead(listint_t **list, listint_t **shaker)
-{
+void swap_node_ahead(listint_t **list, listint_t **shaker) {
+
 	listint_t *tmp = (*shaker)->next;
 
 	if ((*shaker)->prev != NULL)
@@ -66,14 +66,14 @@ void cocktail_sort_list(listint_t **list)
 	for (tail = *list; tail->next != NULL;)
 		tail = tail->next;
 
-	while (shakern_not_stirred = true)
+	while ((shakern_not_stirred = true))
 	{
 		shakern_not_stirred = true;
 		for (shaker = *list; shaker != tail; shaker = shaker->next)
 		{
 			if (shaker->n > shaker->next->n)
 			{
-				swap_node_ahead(list, &tail, &shaker);
+				swap_node_ahead(list, &shaker);
 				print_list((const listint_t *)*list);
 				shakern_not_stirred = false;
 			}
